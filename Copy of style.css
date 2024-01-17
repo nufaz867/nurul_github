@@ -1,0 +1,196 @@
+/* Pengaturan tampilan umum untuk elemen 'section' */
+section {
+    padding-top: 128px;
+    position: relative;
+}
+
+/* Efek latar belakang pada elemen 'section' */
+section::before {
+    z-index: -1;
+    content: '';
+    font-size: 72px;
+    color: gray;
+    opacity: 0.25;
+    position: absolute;
+    font-weight: 700;
+    top: 20px;
+    left: -30px;
+}
+
+/* Gaya tombol dengan kelas 'button' */
+.btn.button {
+    border: 3px solid black;
+    border-radius: 24px;
+}
+
+/* Gaya tombol hover dan aktif */
+.btn.button:hover, .btn.button.active {
+    border: 3px solid black;
+    background-color: black;
+    color: white;
+}
+
+/* Gaya navbar */
+.navbar {
+    background-color: white;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Gaya teks pada bagian 'home' */
+.home h1 {
+    font-size: 72px;
+}
+
+.home h3 {
+    font-size: 48px;
+}
+
+/* Gaya gambar pada bagian 'home' */
+.home img {
+    width: 100%;
+}
+
+/* Gaya panah navigasi pada bagian 'home' */
+.home .arrow img {
+    width: 60px;
+}
+
+/* Animasi panah naik-turun */
+#arrow {
+    animation: 2s upDown infinite;
+}
+
+/* Teks tambahan pada bagian 'about' */
+.about::before {
+    content: 'About';
+}
+
+/*  Gaya item pengalaman pada bagian 'about' */
+.about-exp-item {
+    margin-top: 32px;
+}
+
+/*  Gaya header item pengalaman pada bagian 'about' */
+.about-exp-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*  Gaya detail item pengalaman pada bagian 'about' */
+.about-exp-item-detail {
+    display: none;
+}
+
+/* Teks tambahan pada bagian 'work' */
+.work::before {
+    content: 'Work';
+}
+
+/* Gaya grid dan gambar pekerjaan pada bagian 'work' */
+.work-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "work-1 work-2" "work-3 work-3";
+    gap: 16px;
+}
+
+/*  Gaya gambar pekerjaan pada bagian 'work' */
+.work-img img {
+    width: 100%;
+}
+
+/*  Efek overlay pada gambar pekerjaan pada bagian 'work' */
+.work-img-item {
+    position: relative;
+}
+
+.work-img-item:hover::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+/*  Teks tambahan untuk masing-masing gambar pekerjaan pada bagian 'work' */
+#work-1 {
+    grid-area: work-1;
+}
+
+#work-1:hover::after {
+    content: 'Web Project';
+}
+
+#work-2 {
+    grid-area: work-2;
+}
+
+#work-2:hover::after {
+    content: 'Software Project';
+}
+
+#work-3 {
+    grid-area: work-3;
+}
+
+#work-3:hover::after {
+    content: 'Software Project';
+}
+
+/* Pengaturan tampilan untuk bagian 'contact' */
+.contact {
+    padding-bottom: 126px;
+}
+
+/* Teks tambahan pada bagian 'contact' */
+.contact::before {
+    content: 'Contact';
+}
+
+/* Gaya formulir kontak pada bagian 'contact' */
+.contact-form {
+    border: 1px solid black;
+    padding: 64px 32px;
+}
+
+/*  Gaya label formulir pada bagian 'contact' */
+.form-label {
+    font-weight: 700;
+}
+
+/* Responsif untuk gambar pada layar kecil (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    .home img {
+        width: 50%;
+    }
+}
+
+/* Penyesuaian ukuran latar belakang pada layar kecil (max-width: 576px) */
+@media only screen and (max-width: 576px) {
+    section::before {
+        width: -10px;
+        font-size: 64px;
+    }
+}
+
+/*  Animasi panah naik-turun */
+@keyframes upDown {
+    0% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
